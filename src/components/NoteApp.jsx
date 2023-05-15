@@ -1,13 +1,15 @@
-import { useState } from "react";
 import NoteAdd from "./NoteAdd";
 import NoteList from "./NoteList";
 import NoteModal from "./NoteModal";
+import { useDispatch, useSelector } from "react-redux";
+import { updModal } from "./actions";
 
 function NoteApp() {
-    const [showModal, setShowModal] = useState(false);
+    const showModal = useSelector((state)=>state.updModal.open);
+    const dispatch = useDispatch();
 
     const toggleModal = () => {
-        setShowModal(!showModal);
+        dispatch(updModal());
     }
 
     return (

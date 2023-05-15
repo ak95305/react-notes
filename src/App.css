@@ -106,14 +106,17 @@ button{
 .note-detail input, .note-detail textarea{
     width: 100%;
     padding: 20px 10px 15px 10px;
-    font-size: 20px;
+    font-size: 14px;
     border: none;
     resize: none;
 }
 
-.note-detail .note-heading{
+.note-detail .note-heading textarea{
     margin-bottom: 20px;
     border-bottom: 2px solid #aaaaaa45;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
 }
 
 .note-btns button{

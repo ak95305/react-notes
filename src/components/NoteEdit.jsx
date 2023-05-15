@@ -7,8 +7,7 @@ function NoteEdit(props) {
     const dispatch = useDispatch();
 
     const handleEdit = () => {
-        // dispatch(updModal());
-        dispatch(updNote(props.id));
+        dispatch(updModal(props.id));
     }
 
     return (

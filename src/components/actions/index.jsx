@@ -12,15 +12,19 @@ export const delNote = (noteId) => {
     }
 }
 
-export const updNote = (noteId) => {
+export const updNote = (noteId, updNote) => {
     return {
         type: "UPD",
-        payload: noteId
+        payload: {
+            id: noteId,
+            updNote: updNote
+        }
     }
 }
 
-export const updModal = () => {
+export const updModal = (noteId) => {
     return {
-        type: "CHNGE"
+        type: "CHNGE",
+        payload: noteId
     }
 }
