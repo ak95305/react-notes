@@ -60,12 +60,9 @@ if (localStorage.getItem("notes") === null) {
     ];
     const jsonData = JSON.stringify(initialNotes);
     localStorage.setItem("notes", jsonData);
-
-}else{
+} else {
     initialNotes = JSON.parse(localStorage.getItem("notes"));
 }
-
-
 
 const showModal = {
     open: false,
@@ -75,15 +72,21 @@ const showModal = {
 const updNotes = (state = initialNotes, action) => {
     switch (action.type) {
         case "ADD":
-            return [...state, action.payload];
+            state = [...state, action.payload];
+            localStorage.setItem("notes", JSON.stringify(state));
+            return state;
         case "DEL":
-            return state.filter((item) => item.id !== action.payload);
+            state = state.filter((item) => item.id !== action.payload);
+            localStorage.setItem("notes", JSON.stringify(state));
+            return state;
         case "UPD":
             const note = state.find((item) => item.id == action.payload.id);
             note.head = action.payload.updNote.head;
             note.desc = action.payload.updNote.desc;
+            localStorage.setItem("notes", JSON.stringify(state));
             return state;
         default:
+            localStorage.setItem("notes", JSON.stringify(state));
             return state;
     }
 };
