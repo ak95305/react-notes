@@ -28,6 +28,7 @@ button{
     flex-wrap: wrap;
     gap: 15px;
     padding: 40px 0;
+    justify-content: center;
 }
 
 .note {
@@ -136,4 +137,30 @@ button{
 
 .cancel-btn{
     background-color: #ddd;
+}
+
+@media (max-width: 767px){
+    .note-modal{
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+    }
+    .note-detail{
+        padding-left: 0;
+        padding-right: 0;
+        flex-basis: auto;
+    }
+    .note-btns button{
+        text-align: center;
+        margin-bottom: 0;
+        max-width: 100px;
+        /* width: auto; */
+    }
+    .note-btns{
+        flex-basis: auto;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
